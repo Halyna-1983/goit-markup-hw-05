@@ -319,6 +319,7 @@ ul {
 .element {  
     width: 370px;
     margin-right: 30px;
+    
 }
 
 .element-position .element:last-child {
@@ -542,6 +543,7 @@ ul {
     margin-right: 30px;
     margin-bottom: 30px;
     background-color: #eeeeee;
+   
 }
 
 .works-element:hover {
@@ -550,6 +552,8 @@ ul {
 
 .works-element-blue {
     position: relative;
+
+    overflow: hidden;
 }    
 
 .works-element-blue::before {
@@ -560,12 +564,23 @@ ul {
     height: 100%;
     background-color: rgba(33, 150, 243, 0.9);
     
-    opacity: 0;
+    /* opacity: 0; */
+
+    transform: translateY(100%);
+
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
 }
 
-.works-element-blue:hover::before {
-    opacity: 1;
+.works-element:hover .works-element-blue::before {
+    transform: translateY(0);
 }
+
+/* .works-element-blue:hover::before {
+    opacity: 1;
+} */
+
+
 
 .works-description {
     position: absolute;
